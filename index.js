@@ -25,6 +25,11 @@ const server = http.createServer((req, res) => {
     const html = fs.readFileSync('./pages/contact-me.html')
     res.end(html)
   }
+  else {
+    res.statusCode = 404;
+    const html = fs.readFileSync('./pages/404.html')
+    res.end(html)
+  }
 });
 
 server.listen(port, hostname, () => {
